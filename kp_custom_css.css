@@ -9,3 +9,23 @@
 html.is-animating .transition-fade {
     opacity: 0;
 }
+
+/* Fade In Text on Slider
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+.section>.textHolder .head,
+.section>.textHolder .author {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+
+
+.section.active>.textHolder .head,
+.section.active>.textHolder .author {
+    opacity: 1;
+}
+
+.section.active>.textHolder .author {
+    transition-delay: 1s;
