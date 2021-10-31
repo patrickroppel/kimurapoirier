@@ -13,7 +13,6 @@ html.is-animating .transition-fade {
 /* Fade In Text on Slider
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-
 .section>.textHolder .head,
 .section>.textHolder .author {
     opacity: 0;
@@ -29,3 +28,31 @@ html.is-animating .transition-fade {
 
 .section.active>.textHolder .author {
     transition-delay: 1s;
+
+    /* Flicker
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+    .Flicker {
+        perspective: 1000;
+        backface-visibility: hidden;
+        transform: translate3d(0, 0, 0);
+        -webkit-perspective: 1000;
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+
+
+    /* Type Color Change Slideshow
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+    .fp-viewing-risque .navText {
+        color: black;
+    }
+    
+    .fp-viewing-risque .logo {
+        color: black;
+    }
+
+    .fp-viewing-risque .footnote {
+        color: black;
+    }
