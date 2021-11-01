@@ -45,11 +45,11 @@ html.is-animating .transition-fade {
     /* Type Color Change Slideshow
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-    .fp-viewing-risque .navText {
+    .fp-viewing-risque .navBox {
         color: black;
     }
     
-    .fp-viewing-risque .logo {
+    .fp-viewing-risque .Footer {
         color: black;
     }
 
