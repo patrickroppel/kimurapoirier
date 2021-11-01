@@ -45,14 +45,14 @@ html.is-animating .transition-fade {
     /* Type Color Change Slideshow
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-    .fp-viewing-risque > .navText {
+    .fp-viewing-risque .navText {
         color: black;
     }
     
-    .fp-viewing-risque > .logo {
+    .fp-viewing-risque .logo {
         color: black;
     }
 
-    .fp-viewing-risque > .footnote {
+    .fp-viewing-risque .footnote {
         color: black;
     }
