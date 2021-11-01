@@ -28,6 +28,7 @@ html.is-animating .transition-fade {
 
 .section.active>.textholder .author {
     transition-delay: 1s;
+}
 
     /* Flicker
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -45,7 +46,7 @@ html.is-animating .transition-fade {
     /* Type Color Change Slideshow
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-    body.fp-viewing-risque .logo {
+.fp-viewing-risque .logo {
         color: black;
     }
     
