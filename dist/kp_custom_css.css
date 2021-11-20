@@ -21,23 +21,43 @@ html.is-animating .transition-fade {
     opacity: 0;
 }
 
-/* Fade In Text on Slider
+/* Fluid Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-.section>.textholder .head,
-.section>.textholder .author {
-    opacity: 0;
-    transition: 0.5s ease-in;
+.s240 {
+    font-size: clamp(120px, 24vw, 300px);
+    line-height: clamp(108px, 19.5vw, 244px);
 }
 
-
-
-.section.active>.textholder .head,
-.section.active>.textholder .author {
-    opacity: 1;
+.s210 {
+    font-size: clamp(105px, 21vw, 263px);
+    line-height: clamp(95px, 17vw, 214px);
 }
 
+.s180 {
+    font-size: clamp(90px, 18vw, 225px);
+    line-height: clamp(81px, 14.625vw, 183px);
+}
 
+.s150 {
+    font-size: clamp(75px, 15vw, 188px);
+    line-height: clamp(68px, 12vw, 153px);
+}
+
+.s120 {
+    font-size: clamp(60px, 12vw, 150px);
+    line-height: clamp(54px, 9.75vw, 122px);
+}
+
+.s90 {
+    font-size: clamp(45px, 9vw, 113px);
+    line-height: clamp(41px, 7.5vw, 92px);
+}
+
+.s60 {
+    font-size: clamp(30px, 6vw, 75px);
+    line-height: clamp(27px, 4.875vw, 61px);
+}
 
     /* Flicker
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -50,7 +70,6 @@ html.is-animating .transition-fade {
         -webkit-backface-visibility: hidden;
         -webkit-transform: translate3d(0, 0, 0);
     }
-
 
     /* Type Color Change Slideshow
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
