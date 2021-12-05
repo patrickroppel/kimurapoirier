@@ -1,0 +1,839 @@
+/* Basics
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+html {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  box-sizing: content-box;
+  margin: 0;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin: 0;
+}
+
+p {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #333;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+a:hover {
+  color: transparent;
+  transition: color 1s ease-in;
+}
+
+* {
+  color: #333;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures contextual;
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  border: none;
+  padding: none;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+input[type=email] {
+  display: inline-block;
+  width: 30vw;
+  padding: 0;
+  margin: none;
+  border: none;
+  border-bottom: none;
+  text-align: center;
+  outline: none;
+  color: #292929;
+  background-color: #fff;
+}
+
+input[type=submit] {
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  margin: none;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+/* Typefaces New
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@font-face {
+  font-family: 'TradeGothicLTStd-Extended';
+  src: url('/fonts/TradeGothic/font.woff2') format('woff2'),
+    url('//fonts/TradeGothic/font.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haas Grot Disp R Web';
+  src: url('/fonts/NeueHaas/NeueHaasGrotDispRound-65Medium-Web.woff2') format('woff2'),
+    url('/fonts/NeueHaas/NeueHaasGrotDispRound-65Medium-Web.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Optima';
+  src: url('/fonts/Optima/5962250/6ac5c559-f917-4392-a16c-93437a46210d.woff2') format('woff2'),
+    url('/fonts/Optima/5962250/6ac5c559-f917-4392-a16c-93437a46210d.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Optima';
+  src: url('/fonts/Optima/5962254/cf5e912a-25b2-4f77-a4fc-d8ff36cf891d.woff2') format('woff2'),
+    url('/fonts/Optima/5962254/cf5e912a-25b2-4f77-a4fc-d8ff36cf891d.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+/* Swup
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.transition-fade {
+  transition: 1s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
+/* Header
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.headerBox {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 90vw;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
+.headerBox.show {
+  position: absolute;
+  z-index: 3;
+}
+
+
+.headerBox.kimura {
+  z-index: 6;
+}
+
+.headerBox.editor {
+  z-index: -6;
+}
+
+.logoBox {
+  position: absolute;
+  font-size: clamp(12px, 2vw, 21px);
+  font-family: 'TradeGothicLTStd-Extended';
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  z-index: 6;
+  color: #333;
+  transition: color 1s ease-in;
+}
+
+.editorAtLarge {
+  position: relative;
+  text-align: right;
+  float: right;
+  z-index: -6;
+  opacity: 1;
+}
+
+.editorAtLarge.fader {
+  color: transparent;
+  width: 100%;
+  z-index: 3;
+}
+
+/* Footer
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.footer {
+  position: relative;
+  width: 90vw;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.menuButton {
+  color: #333;
+  transition: color 1s ease-in;
+  cursor: pointer;
+  width: auto;
+  display: inline-block;
+}
+
+
+.subline {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.sublineNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-grow: 0;
+}
+
+
+
+/* Swiper 
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.swipermove {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+}
+
+.swiperfade {
+  background-color: green;
+  width: 100%;
+  height: 100%;
+}
+
+/*  Swiper Flicker Wrapper 
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.flicker {
+  perspective: 1000;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+/* SwiperFrame
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.swiperframe {
+  width: 90vw;
+  max-width: 1260px;
+  padding: 1vmax 1.5vmax;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+  position: absolute;
+  display: flex;
+}
+
+/* SwiperFrame Media Query Mobile Horizontal
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.swiperframe.mobile {
+  display: none;
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) {
+  .swiperframe {
+    display: none;
+  }
+
+  .swiperframe.mobile {
+    display: block;
+  }
+}
+
+/* Swiper Logo Color Change 
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.fp-viewing-risque .logoBox {
+  color: white;
+}
+
+.fp-viewing-eau .logoBox {
+  color: white;
+}
+
+
+/* Section Risque 
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.swiperframe.risque {
+  flex-direction: column;
+}
+
+/* Section Meditation 
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.section.meditation {
+  background-color: white;
+}
+
+.swiperframe.meditation {
+  flex-direction: column;
+}
+
+/* Section Footer 
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.swiperframe.footer {
+  top: auto;
+  transform: translate(-50%, 0%);
+  bottom: 0;
+  background-color: white;
+}
+
+.section.footer {
+  background-color: white;
+}
+
+
+
+/* Experimental Playground
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Experimental Playground
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Experimental Playground
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Experimental Playground
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.swiperPlayground {
+  width: 90vw;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1vmax 1.5vmax;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+.playground {
+  width: 90vw;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1vmax 1.5vmax;
+  display: flex;
+  flex-direction: column;
+}
+
+.textBox {
+  width: 100%;
+}
+
+.linkEmail {
+  color: #333;
+  transition: color 1s ease-in;
+  cursor: pointer;
+}
+
+.linkEmail:hover {
+  color: transparent;
+  transition: color 1s ease-in;
+}
+
+.authorBox {
+  padding-bottom: 3vmax;
+}
+
+.project {
+  margin-bottom: 6vmax;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.haas {
+  font-family: 'Haas Grot Disp R Web';
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: #333;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures contextual;
+  -moz-font-feature-settings: "ss01", "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "ss01", "kern", "liga", "clig", "calt";
+  -webkit-font-feature-settings: "ss01", "kern", "liga", "clig", "calt";
+  font-feature-settings: "ss01", "kern", "liga", "clig", "calt";
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.garamond {
+  font-family: adobe-garamond-pro, serif;
+  letter-spacing: -0.03em;
+  color: #333;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures contextual;
+  -moz-font-feature-settings: "kern", "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.optima {
+  font-family: 'Optima';
+  font-weight: 400;
+  letter-spacing: -0.069em;
+  color: #333;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures contextual;
+  -moz-font-feature-settings: "ss01", "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "ss01", "kern", "liga", "clig", "calt";
+  -webkit-font-feature-settings: "ss01", "kern", "liga", "clig", "calt";
+  font-feature-settings: "ss01", "kern", "liga", "clig", "calt";
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Sizes
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.s300 {
+  font-size: clamp(100px, 30vw, 400px);
+  line-height: clamp(83px, 25vw, 333px);
+}
+
+.s270 {
+  font-size: clamp(90px, 27vw, 360px);
+  line-height: clamp(75px, 22.5vw, 300px);
+}
+
+.s240 {
+  font-size: clamp(80px, 24vw, 320px);
+  line-height: clamp(67px, 20vw, 267px);
+}
+
+.s210 {
+  font-size: clamp(70px, 21vw, 280px);
+  line-height: clamp(58px, 17.5vw, 233px);
+}
+
+.s180 {
+  font-size: clamp(60px, 18vw, 240px);
+  line-height: clamp(50px, 15vw, 200px);
+}
+
+.s168 {
+  font-size: clamp(56px, 15vw, 224px);
+  line-height: clamp(47px, 12.5vw, 187px);
+}
+
+.s150 {
+  font-size: clamp(50px, 16.8vw, 200px);
+  line-height: clamp(42px, 14vw, 167px);
+}
+
+.s144 {
+  font-size: clamp(48px, 14.4vw, 192px);
+  line-height: clamp(40px, 12vw, 160px);
+}
+
+.s120 {
+  font-size: clamp(40px, 12vw, 160px);
+  line-height: clamp(33px, 10vw, 133px);
+}
+
+.s90 {
+  font-size: clamp(30px, 9vw, 120px);
+  line-height: clamp(25px, 7.5vw, 100px);
+}
+
+.s72 {
+  font-size: clamp(24px, 7.2vw, 96px);
+  line-height: clamp(20px, 6vw, 80px);
+}
+
+.s60 {
+  font-size: clamp(20px, 6vw, 80px);
+  line-height: clamp(17px, 5vw, 67px);
+}
+
+.s30 {
+  font-size: clamp(15px, 3vw, 60px);
+  line-height: clamp(13px, 2.5vw, 50px);
+}
+
+.s24 {
+  font-size: clamp(12px, 2.4vw, 48px);
+  line-height: clamp(10px, 2vw, 40px);
+}
+
+.transparent {
+  color: transparent;
+}
+
+.negative {
+  color: white;
+}
+
+.flushRight {
+  text-align: right;
+}
+
+.flushLeft {
+  text-align: left;
+}
+
+
+/* Padding
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.p05 {
+  padding: 0.5vmax
+}
+
+.p10 {
+  padding: 1vmax
+}
+
+.p15 {
+  padding: 1.5vmax
+}
+
+.p20 {
+  padding: 2vmax
+}
+
+.pHor05 {
+  padding: 0 0.5vmax
+}
+
+.pHor10 {
+  padding: 0 1vmax
+}
+
+.pHor15 {
+  padding: 0 1.5vmax
+}
+
+.pHor20 {
+  padding: 0 2vmax
+}
+
+.pVer05 {
+  padding: 0.5vmax 0
+}
+
+.pVer10 {
+  padding: 1vmax 0
+}
+
+.pVer15 {
+  padding: 1.5vmax 0
+}
+
+.pVer20 {
+  padding: 2vmax 0
+}
+
+.pTop05 {
+  padding-top: 0.5vmax;
+}
+
+.pTop10 {
+  padding-top: 1vmax;
+}
+
+.pTop15 {
+  padding-top: 1.5vmax;
+}
+
+.pTop20 {
+  padding-top: 2vmax;
+}
+
+.pTop25 {
+  padding-top: 2.5vmax;
+}
+
+.pTop30 {
+  padding-top: 3vmax;
+}
+
+.pTop35 {
+  padding-top: 3.5vmax;
+}
+
+.pTop45 {
+  padding-top: 4.5vmax;
+}
+
+.pBottom05 {
+  padding-bottom: 0.5vmax;
+}
+
+.pBottom10 {
+  padding-bottom: 1vmax;
+}
+
+.pBottom15 {
+  padding-bottom: 1.5vmax;
+}
+
+.pBottom20 {
+  padding-bottom: 2vmax;
+}
+
+.pBottom25 {
+  padding-bottom: 2.5vmax;
+}
+
+.pLeft05 {
+  padding-left: 0.5vmax;
+}
+
+.pLeft10 {
+  padding-left: 1vmax;
+}
+
+.pLeft15 {
+  padding-left: 1.5vmax;
+}
+
+.pLeft20 {
+  padding-left: 2vmax;
+}
+
+.pRight05 {
+  padding-right: 0.5vmax;
+}
+
+.pRight10 {
+  padding-right: 1vmax;
+}
+
+.pRight15 {
+  padding-right: 1.5vmax;
+}
+
+.pRight20 {
+  padding-right: 2vmax;
+}
+
+/* Margin
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.m05 {
+  margin: 0.5vmax
+}
+
+.m10 {
+  margin: 1vmax
+}
+
+.m15 {
+  margin: 1.5vmax
+}
+
+.m20 {
+  margin: 2vmax
+}
+
+.mHor05 {
+  margin: 0 0.5vmax
+}
+
+.mHor10 {
+  margin: 0 1vmax
+}
+
+.mHor15 {
+  margin: 0 1.5vmax
+}
+
+.mHor20 {
+  margin: 0 2vmax
+}
+
+.mVer05 {
+  margin: 0.5vmax 0
+}
+
+.mVer10 {
+  margin: 1vmax 0
+}
+
+.mVer15 {
+  margin: 1.5vmax 0
+}
+
+.mVer20 {
+  margin: 2vmax 0
+}
+
+.mTop05 {
+  margin-top: 0.5vmax;
+}
+
+.mTop10 {
+  margin-top: 1vmax;
+}
+
+.mTop15 {
+  margin-top: 1.5vmax;
+}
+
+.mTop20 {
+  margin-top: 2vmax;
+}
+
+.mTop25 {
+  margin-top: 2.5vmax;
+}
+
+.mTop30 {
+  margin-top: 3vmax;
+}
+
+.mTop35 {
+  margin-top: 3.5vmax;
+}
+
+.mBottom05 {
+  margin-bottom: 0.5vmax;
+}
+
+.mBottom10 {
+  margin-bottom: 1vmax;
+}
+
+.mBottom15 {
+  margin-bottom: 1.5vmax;
+}
+
+.mBottom20 {
+  margin-bottom: 2vmax;
+}
+
+.mLeft05 {
+  margin-left: 0.5vmax;
+}
+
+.mLeft10 {
+  margin-left: 1vmax;
+}
+
+.mLeft15 {
+  margin-left: 1.5vmax;
+}
+
+.mLeft20 {
+  margin-left: 2vmax;
+}
+
+.mRight05 {
+  margin-right: 0.5vmax;
+}
+
+.mRight10 {
+  margin-right: 1vmax;
+}
+
+.mRight15 {
+  margin-right: 1.5vmax;
+}
+
+.mRight20 {
+  margin-right: 2vmax;
+}
